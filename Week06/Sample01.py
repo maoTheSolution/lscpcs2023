@@ -25,5 +25,3 @@ turtle.listen()
   
 # ending the filling of the color 
 t.end_fill() 
-
-turtle.exitonclick() 
