@@ -1,30 +1,29 @@
-import random
+'''
+1. random --> randint()
+2. list
+3. random function
+4. turtle 
+'''
+
+import random as r
+
+t = list()
+print(t)
+t.append(10)
+t.append(1)
+t.append(3)
+t.append(4)
+t.append(6)
+t.append(7)
+t.append(4)
+t.append(-3)
+t.append(99)
+print(t)
 
 
-colorList = ['AliceBlue', 'AntiqueWhite', 'aquamarine', 'beige', 'bisque', 'black', 'BlanchedAlmond', 'blue', 'BlueViolet', 'brown', 'burlywood', 'CadetBlue', 'chartreuse', 'chocolate', 'coral', 'CornflowerBlue', 'cornsilk', 'cyan', 'DarkBlue', 'DarkCyan', 'DarkGoldenrod', 'DarkGray', 'DarkGreen', 'DarkGrey', 'DarkKhaki', 'DarkMagenta', 'DarkOliveGreen', 'DarkOrange', 'DarkOrchid', 'DarkRed', 'DarkSalmon', 'DarkSeaGreen', 'DarkSlateBlue', 'DarkSlateGray', 'DarkSlateGrey', 'DarkTurquoise', 'DarkViolet', 'DeepPink', 'DeepSkyBlue']
+
+def randomSel(targetList):
+    return targetList[r.randint(0, len(targetList)-1)]
 
 
-
-
-
-def getColorList():
-    return colorList
-
-def getlenCL():
-    return len(colorList)
-
-def remove(item):
-    colorList.remove(item)
-
-def add(item):
-    colorList.append(item)
-
-
-if __name__ == '__main__':
-    # print(getlenCL())
-    # print(getColorList())
-    # remove('DarkSlateGray')
-    # print(getlenCL())
-    # add("Red")
-    # print(getlenCL())
-    print(colorList[random.randint(0, len(colorList)-1)])
+print(randomSel(t))
