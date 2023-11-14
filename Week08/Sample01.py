@@ -11,10 +11,16 @@ ws = turtle.Screen()
 geekyTurtle = turtle.Turtle()
  
 # executing loop 5 times for a star
+geekyTurtle.fillcolor('Red')
+geekyTurtle.begin_fill()
 for i in range(5):
- 
+        
         # moving turtle 100 units forward
         geekyTurtle.forward(100)
+
  
         # rotating turtle 144 degree right
         geekyTurtle.right(144)
+geekyTurtle.end_fill()
+
+ws.exitonclick()
