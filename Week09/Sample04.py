@@ -39,6 +39,7 @@ while(not con):
         bg_xPos = 0
     if bg2_xPos == 0:
         bg2_xPos =  win_width
+
     ch_yPost = ch_yPos + force
 
     gamepad.blit(background01, (bg_xPos,bg_yPos))
@@ -46,5 +47,5 @@ while(not con):
     gamepad.blit(character, (ch_xPos, ch_yPos))
 
     pygame.display.update()
-    clock.tick(120)
+    clock.tick(60)
 

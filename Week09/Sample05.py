@@ -10,6 +10,7 @@ ch_xPos = 0
 ch_yPos = 0
 con = False
 force = 0
+temp = 0
 
 pygame.init()
 gamepad = pygame.display.set_mode((win_width, win_height))
@@ -20,7 +21,6 @@ character = pygame.transform.scale(character, (150, 100))
 clock = pygame.time.Clock()
 
 while(not con):
-    df = clock.tick(60)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             con = True
@@ -33,19 +33,19 @@ while(not con):
         if event.type == pygame.KEYUP:
             force = 0
 
-    bg_xPos = bg_xPos - 5
-    bg2_xPos = bg2_xPos - 5
+    bg_xPos = bg_xPos - 8
+    bg2_xPos = bg2_xPos - 8
 
-    if bg_xPos + win_width == 0:
+    if bg_xPos +  win_width == 0:
         bg_xPos = 0
         bg2_xPos = win_width
 
-    ch_yPos = ch_yPos + force * df
+    ch_yPos = ch_yPos + force * clock.tick(60)
 
     gamepad.blit(background01, (bg_xPos,bg_yPos))
     gamepad.blit(background02, (bg2_xPos, bg_yPos))
     gamepad.blit(character, (ch_xPos, ch_yPos))
 
     pygame.display.update()
-    # clock.tick(60)
+    clock.tick(60)
 
