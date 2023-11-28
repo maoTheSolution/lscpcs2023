@@ -1,4 +1,5 @@
 import pygame
+import random
 
 # variables
 win_width = 1024
@@ -19,6 +20,10 @@ background02 = background01.copy()
 character = pygame.image.load('./boy.png')
 character = pygame.transform.scale(character, (150, 100))
 clock = pygame.time.Clock()
+obs = pygame.image.load('./pumkin.png')
+obs = pygame.transform.scale(obs, (100, 100))
+obs_y = random.randint(0, 512)
+obs_x = 1024
 
 while(not con):
     for event in pygame.event.get():
@@ -42,9 +47,15 @@ while(not con):
 
     ch_yPos = ch_yPos + force * clock.tick(60)
 
+    obs_x = obs_x - 8
+    if(obs_x < 0):
+        obs_x = 1024
+        obs_y = random.randint(0, 512)
+
     gamepad.blit(background01, (bg_xPos,bg_yPos))
     gamepad.blit(background02, (bg2_xPos, bg_yPos))
     gamepad.blit(character, (ch_xPos, ch_yPos))
+    gamepad.blit(obs, (obs_x, obs_y))
 
     pygame.display.update()
     clock.tick(60)
